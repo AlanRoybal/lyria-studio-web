@@ -2,15 +2,15 @@
   "rewrites": [
     {
       "source": "/dl/mac",
-      "destination": "https://github.com/AlanRoybal/lyria-studio/releases/latest/download/Lyria%20Studio-0.1.0-mac-arm64.dmg"
+      "destination": "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.0/Lyria.Studio-0.1.0-mac-arm64.dmg"
     },
     {
       "source": "/dl/windows",
-      "destination": "https://github.com/AlanRoybal/lyria-studio/releases/latest/download/Lyria%20Studio-0.1.0-win-x64.exe"
+      "destination": "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.0/Lyria.Studio-0.1.0-win-x64.exe"
     },
     {
       "source": "/dl/linux",
-      "destination": "https://github.com/AlanRoybal/lyria-studio/releases/latest/download/Lyria%20Studio-0.1.0-linux-x86_64.AppImage"
+      "destination": "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.0/Lyria.Studio-0.1.0-linux-x86_64.AppImage"
     }
   ]
 }

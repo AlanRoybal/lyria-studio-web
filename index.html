@@ -71,7 +71,7 @@
               <a
                 class="download-card"
                 href="/dl/mac"
-                download="Lyria Studio-0.1.0-mac-arm64.dmg"
+                download="Lyria.Studio-0.1.0-mac-arm64.dmg"
               >
                 <span class="download-icon" aria-hidden="true">
                   <svg viewBox="0 0 384 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@
               <a
                 class="download-card"
                 href="/dl/windows"
-                download="Lyria Studio-0.1.0-win-x64.exe"
+                download="Lyria.Studio-0.1.0-win-x64.exe"
               >
                 <span class="download-icon" aria-hidden="true">
                   <svg viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
               <a
                 class="download-card"
                 href="/dl/linux"
-                download="Lyria Studio-0.1.0-linux-x86_64.AppImage"
+                download="Lyria.Studio-0.1.0-linux-x86_64.AppImage"
               >
                 <span class="download-icon" aria-hidden="true">
                   <svg viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -112,14 +112,6 @@
                   <strong>Download for Linux</strong>
                   <small>AppImage</small>
                 </span>
-              </a>
-            </div>
-            <div class="hero-links" aria-label="Distribution and repository links">
-              <a href="https://github.com/AlanRoybal/lyria-studio/releases" target="_blank" rel="noreferrer">
-                Browse all releases
-              </a>
-              <a href="https://github.com/AlanRoybal/lyria-studio" target="_blank" rel="noreferrer">
-                Star the repo
               </a>
             </div>
             <div class="mac-fix">
@@ -136,123 +128,10 @@
           </div>
 
           <div class="hero-visual" id="preview">
-            <div class="orb orb-a"></div>
-            <div class="orb orb-b"></div>
-            <div class="studio-window">
-              <div class="window-topbar">
-                <div class="traffic-lights">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <div class="app-title">
-                  <img src="./assets/lyria-icon.svg" alt="" aria-hidden="true" />
-                  <span>Lyria Studio</span>
-                </div>
-                <div class="app-key">
-                  <span>Gemini Key</span>
-                  <span class="ready">Ready</span>
-                </div>
-              </div>
-              <div class="overview-strip">
-                <span>Overview</span>
-                <div class="overview-waveforms">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
-              </div>
-              <div class="window-body">
-                <aside class="node-panel">
-                  <p class="panel-label">Nodes</p>
-                  <div class="node-card purple">
-                    <strong>Prompt</strong>
-                    <span>Text direction</span>
-                  </div>
-                  <div class="node-card green">
-                    <strong>Instrument</strong>
-                    <span>Sonic palette</span>
-                  </div>
-                  <div class="node-card pink">
-                    <strong>Vocals</strong>
-                    <span>Lyrics + phrasing</span>
-                  </div>
-                  <div class="node-card amber">
-                    <strong>Output</strong>
-                    <span>Final mix</span>
-                  </div>
-                </aside>
-                <div class="canvas-panel">
-                  <div class="canvas-grid"></div>
-                  <div class="canvas-node node-main">
-                    <span class="node-chip">A1</span>
-                    <strong>Neon R&amp;B Night Drive</strong>
-                    <p>Late-night groove, airy falsetto, cinematic synths.</p>
-                  </div>
-                  <div class="canvas-node node-secondary">
-                    <span class="node-chip">FX</span>
-                    <strong>Vocal Texture</strong>
-                    <p>Lyrics, close mic presence, stacked harmonies, rose-tinted adlibs.</p>
-                  </div>
-                  <div class="canvas-node node-third">
-                    <span class="node-chip">DR</span>
-                    <strong>Drum Motion</strong>
-                    <p>Minimal kick pattern with crisp percussion accents.</p>
-                  </div>
-                  <div class="connection connection-a"></div>
-                  <div class="connection connection-b"></div>
-                </div>
-                <aside class="properties-panel">
-                  <div class="properties-header">
-                    <span>Properties</span>
-                    <span class="property-badge">Vocals Node</span>
-                  </div>
-                  <div class="property-group">
-                    <label>Lyrics</label>
-                    <div class="property-box multiline">
-                      city lights blur into silver rain
-                      <br />
-                      keep the engine warm and call my name
-                    </div>
-                  </div>
-                  <div class="property-group">
-                    <label>Additional Prompts</label>
-                    <div class="property-box">
-                      Breathier delivery, intimate tone, no instruments in vocals render.
-                    </div>
-                  </div>
-                  <div class="property-note">
-                    Connected vocals use `models/lyria-3-pro-preview`. Instrument and vocals nodes stay separate.
-                  </div>
-                </aside>
-              </div>
-              <div class="window-footer">
-                <div class="transport">
-                  <span class="transport-button play"></span>
-                  <span class="transport-button"></span>
-                  <span class="transport-button"></span>
-                  <span class="auto-pill">AUTO</span>
-                  <span class="live-pill">Go Live</span>
-                  <span class="capture-pill">Capturing</span>
-                  <span class="export-pill">Export Song</span>
-                </div>
-                <div class="timeline">
-                  <div class="timeline-header">
-                    <span>00:00:00:00</span>
-                    <span>BPM 120</span>
-                    <span>Ready</span>
-                  </div>
-                  <div class="track">
-                    <span class="track-name">A1</span>
-                    <div class="track-lane">
-                      <div class="clip clip-green">Instr 1</div>
-                      <div class="clip clip-pink">Vocals 2</div>
-                      <div class="playhead"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="hero-visual-glow hero-visual-glow-a"></div>
+            <div class="hero-visual-glow hero-visual-glow-b"></div>
+            <div class="hero-shot hero-shot-primary">
+              <img src="./assets/app-canvas-overview.png" alt="Lyria Studio graph editor and timeline overview" />
             </div>
           </div>
         </section>
@@ -270,6 +149,50 @@
             <strong>Offline-ready export</strong>
             <span>render mixdowns to WAV or supported compressed formats from the arranged session</span>
           </div>
+        </section>
+
+        <section class="showcase section" aria-label="Lyria Studio interface showcase">
+          <article class="showcase-row reveal-on-scroll">
+            <div class="showcase-media">
+              <img src="./assets/app-vocals-node.png" alt="Lyria Studio vocals node editor" />
+            </div>
+            <div class="showcase-copy">
+              <p class="card-kicker">Vocals Editor</p>
+              <h3>This is where you sketch the vocal idea without breaking your flow.</h3>
+              <p>
+                You can drop in lyrics, add a few notes about tone or delivery, and keep moving. It feels more like
+                shaping a take in the middle of a session than filling out a form.
+              </p>
+            </div>
+          </article>
+
+          <article class="showcase-row showcase-row-reverse reveal-on-scroll">
+            <div class="showcase-media">
+              <img src="./assets/app-export-menu.png" alt="Lyria Studio export song menu" />
+            </div>
+            <div class="showcase-copy">
+              <p class="card-kicker">Export Flow</p>
+              <h3>When the idea is ready, exporting is right there instead of hidden in another screen.</h3>
+              <p>
+                You do not have to leave the session to finish the track. The export options sit next to the controls
+                you are already using, which makes the handoff from experimenting to rendering feel natural.
+              </p>
+            </div>
+          </article>
+
+          <article class="showcase-row reveal-on-scroll">
+            <div class="showcase-media">
+              <img src="./assets/app-timeline-controls.png" alt="Lyria Studio timeline automation controls" />
+            </div>
+            <div class="showcase-copy">
+              <p class="card-kicker">Timeline Automation</p>
+              <h3>You can make small arrangement moves directly on the clips and hear the difference fast.</h3>
+              <p>
+                Volume and pitch changes are visible where the audio already lives, so the timeline feels like a real
+                arrangement surface instead of a place where generated parts go to wait.
+              </p>
+            </div>
+          </article>
         </section>
 
         <section class="workflow section" id="workflow">
@@ -365,5 +288,21 @@
 
       </main>
     </div>
+    <script>
+      const revealItems = document.querySelectorAll(".reveal-on-scroll");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
   </body>
 </html>
