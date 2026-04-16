@@ -253,8 +253,19 @@
           <div class="hero-visual" id="preview">
             <div class="hero-visual-glow hero-visual-glow-a"></div>
             <div class="hero-visual-glow hero-visual-glow-b"></div>
-            <div class="hero-shot hero-shot-primary">
-              <img src="./assets/app-canvas-overview.png" alt="Lyria Studio graph editor and timeline overview" />
+            <div class="hero-shot hero-shot-primary" id="hero-trailer-card">
+              <img
+                class="hero-shot-poster"
+                src="./assets/app-canvas-overview.png"
+                alt="Lyria Studio graph editor and timeline overview"
+              />
+              <video
+                class="hero-shot-video"
+                id="hero-trailer-video"
+                playsinline
+                preload="metadata"
+                src="./assets/lyria-studio-trailer.m4v"
+              ></video>
             </div>
           </div>
         </section>
@@ -423,6 +434,37 @@
           });
         });
       });
+
+      const heroTrailerCard = document.getElementById("hero-trailer-card");
+      const heroTrailerVideo = document.getElementById("hero-trailer-video");
+
+      if (heroTrailerCard && heroTrailerVideo) {
+        const stopTrailer = () => {
+          heroTrailerCard.classList.remove("is-playing");
+          heroTrailerVideo.pause();
+          heroTrailerVideo.currentTime = 0;
+          heroTrailerVideo.muted = false;
+        };
+
+        heroTrailerCard.addEventListener("pointerenter", async () => {
+          heroTrailerCard.classList.add("is-playing");
+          heroTrailerVideo.currentTime = 0;
+          heroTrailerVideo.muted = false;
+
+          try {
+            await heroTrailerVideo.play();
+          } catch (error) {
+            try {
+              heroTrailerVideo.muted = true;
+              await heroTrailerVideo.play();
+            } catch (fallbackError) {
+              heroTrailerCard.classList.remove("is-playing");
+            }
+          }
+        });
+
+        heroTrailerCard.addEventListener("pointerleave", stopTrailer);
+      }
 
       const revealItems = document.querySelectorAll(".reveal-on-scroll");
       const revealObserver = new IntersectionObserver(

@@ -384,6 +384,29 @@ h1 span {
   object-fit: cover;
 }
 
+.hero-shot-poster,
+.hero-shot-video {
+  transition: opacity 240ms ease;
+}
+
+.hero-shot-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  background: #000;
+}
+
+.hero-shot-primary.is-playing .hero-shot-poster {
+  opacity: 0;
+}
+
+.hero-shot-primary.is-playing .hero-shot-video {
+  opacity: 1;
+}
+
 .hero-shot-primary {
   height: fit-content;
 }
