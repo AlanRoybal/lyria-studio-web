@@ -902,13 +902,34 @@ h1 span {
 
   .nav {
     grid-template-columns: 1fr;
-    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px 18px;
   }
 
   .nav-links {
     order: 3;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 176px;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .stats {
+    padding-bottom: 56px;
   }
 
   .feature-row {
@@ -943,40 +964,304 @@ h1 span {
     width: min(100% - 20px, 1120px);
   }
 
-  h1 {
-    font-size: clamp(2.7rem, 15vw, 4.3rem);
+  .noise {
+    opacity: 0.05;
+    background-size: 48px 48px;
   }
 
-  .nav-actions,
+  .nav {
+    width: min(100% - 20px, 1120px);
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .brand {
+    width: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .brand-copy {
+    gap: 4px;
+  }
+
+  .brand-text {
+    font-size: 0.98rem;
+  }
+
+  .pill {
+    padding: 0.28rem 0.56rem;
+    font-size: 0.64rem;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 15vw, 4.3rem);
+    max-width: 8ch;
+    line-height: 0.92;
+  }
+
   .nav-links {
-    width: 100%;
-    justify-content: center;
+    order: 3;
+    grid-column: 1 / -1;
+    width: calc(100% + 4px);
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 2px 2px 6px;
+    margin-inline: -2px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.88rem;
+  }
+
+  .nav-actions {
+    width: auto;
+    justify-content: flex-end;
+    gap: 10px;
   }
 
   .social-button {
-    width: 100%;
+    min-height: 42px;
+    padding: 0 14px;
+  }
+
+  .social-button-github span {
+    display: none;
+  }
+
+  .hero {
+    gap: 22px;
+    padding: 184px 0 22px;
+  }
+
+  .hero-badge,
+  .eyebrow {
     justify-content: center;
+    padding-inline: 12px;
+    margin-bottom: 18px;
+    font-size: 0.8rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.92rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-meta {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .hero-meta li {
+    width: auto;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 8px 12px;
   }
 
   .hero-visual {
-    gap: 14px;
+    margin-top: 6px;
+    overflow: clip;
+  }
+
+  .hero-visual-glow-a {
+    inset: 4% auto auto -16%;
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-visual-glow-b {
+    inset: auto -10% 2% auto;
+    width: 190px;
+    height: 190px;
   }
 
   .hero-shot {
     border-radius: 20px;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.36);
+  }
+
+  .hero-shot-primary {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: rgba(5, 7, 10, 0.96);
+  }
+
+  .hero-shot-primary img,
+  .hero-shot-primary video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 
   .download-menu-panel {
     position: static;
     margin-top: 10px;
+    border-radius: 18px;
+  }
+
+  .download-card {
+    min-height: 72px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .download-card-main {
+    gap: 14px;
+  }
+
+  .download-label {
+    font-size: 1.05rem;
+  }
+
+  .hero-downloads {
+    margin-top: 18px;
+    gap: 12px;
+  }
+
+  .mac-fix {
+    margin-top: 14px;
+  }
+
+  .mac-fix-label {
+    font-size: 0.82rem;
+  }
+
+  .mac-fix-command {
+    padding: 14px 15px;
+    border-radius: 14px;
+  }
+
+  .stats {
+    gap: 12px;
+    padding-bottom: 48px;
+  }
+
+  .stat {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .stat strong {
+    font-size: 1rem;
   }
 
   .showcase {
-    padding-bottom: 88px;
+    gap: 16px;
+    padding: 10px 0 72px;
+  }
+
+  .showcase-row,
+  .showcase-row-reverse {
+    gap: 14px;
+    padding: 0;
   }
 
   .showcase-media {
     border-radius: 20px;
+    order: 1;
+  }
+
+  .showcase-copy {
+    order: 2;
+    padding: 0 2px 6px;
+  }
+
+  .showcase-copy h3 {
+    margin: 8px 0 10px;
+    font-size: clamp(1.45rem, 8vw, 2rem);
+    line-height: 1.06;
+  }
+
+  .card-kicker,
+  .kicker {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+  }
+
+  .showcase-copy p:last-child,
+  .section-heading p:last-child,
+  .info-card p:last-child,
+  .feature-row p:last-child,
+  .faq-list p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .workflow,
+  .features,
+  .faq {
+    padding: 28px 0 72px;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  .section-heading h2 {
+    margin: 8px 0 10px;
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+
+  .workflow-grid {
+    gap: 12px;
+  }
+
+  .info-card,
+  .feature-row,
+  .stat,
+  .faq-list details {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .info-card {
+    min-height: 0;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .info-card h3,
+  .feature-row h3 {
+    font-size: 1.28rem;
+  }
+
+  .feature-list,
+  .faq-list {
+    gap: 10px;
+  }
+
+  .feature-row {
+    gap: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .faq-list summary {
+    padding: 18px 0;
+    font-size: 0.98rem;
+  }
+
+  .faq-list p {
+    padding-bottom: 18px;
   }
 
   .timeline-header {
@@ -985,5 +1270,57 @@ h1 span {
 
   .mac-fix-command code {
     font-size: 0.84rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .reveal-on-scroll,
+  .showcase-row:nth-of-type(odd).reveal-on-scroll,
+  .showcase-row:nth-of-type(even).reveal-on-scroll {
+    transform: translate3d(0, 32px, 0);
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header {
+    top: max(12px, env(safe-area-inset-top));
+  }
+
+  .nav {
+    grid-template-columns: 1fr;
+  }
+
+  .brand,
+  .nav-actions {
+    width: 100%;
+  }
+
+  .nav-actions {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 214px;
+  }
+
+  .hero-text {
+    margin-top: 18px;
+  }
+
+  .hero-shot-primary {
+    aspect-ratio: 4 / 3;
+  }
+
+  .download-icon {
+    width: 26px;
+    height: 26px;
   }
 }

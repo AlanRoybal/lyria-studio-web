@@ -460,7 +460,7 @@
           heroTrailerVideo.muted = false;
         };
 
-        heroTrailerCard.addEventListener("pointerenter", async () => {
+        const startTrailer = async () => {
           heroTrailerCard.classList.add("is-playing");
           heroTrailerVideo.currentTime = 0;
           heroTrailerVideo.muted = false;
@@ -475,9 +475,19 @@
               heroTrailerCard.classList.remove("is-playing");
             }
           }
-        });
+        };
+
+        heroTrailerCard.addEventListener("pointerenter", startTrailer);
 
         heroTrailerCard.addEventListener("pointerleave", stopTrailer);
+        heroTrailerCard.addEventListener("click", () => {
+          if (heroTrailerCard.classList.contains("is-playing")) {
+            stopTrailer();
+            return;
+          }
+
+          startTrailer();
+        });
       }
 
       const revealItems = document.querySelectorAll(".reveal-on-scroll");
