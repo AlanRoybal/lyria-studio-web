@@ -3,10 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lyria Studio</title>
+    <title>Lyria Studio - Desktop Music IDE for Google Lyria Realtime</title>
     <meta
       name="description"
-      content="Lyria Studio is an AI-native music canvas for building prompts, vocals, instruments, and final mixes in one live workspace."
+      content="Lyria Studio is a desktop music IDE for Google Lyria Realtime. Build with prompts, instruments, vocals, timeline editing, automation, and export on Mac, Windows, and Linux."
+    />
+    <link rel="canonical" href="https://lyria-studio-web.vercel.app/" />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#05060a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lyria Studio" />
+    <meta property="og:url" content="https://lyria-studio-web.vercel.app/" />
+    <meta property="og:title" content="Lyria Studio - Desktop Music IDE for Google Lyria Realtime" />
+    <meta
+      property="og:description"
+      content="Build prompts, instruments, vocals, and final arrangements in one desktop workspace with realtime generation, timeline editing, and export."
+    />
+    <meta
+      property="og:image"
+      content="https://lyria-studio-web.vercel.app/assets/app-canvas-overview.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://lyria-studio-web.vercel.app/" />
+    <meta name="twitter:title" content="Lyria Studio - Desktop Music IDE for Google Lyria Realtime" />
+    <meta
+      name="twitter:description"
+      content="Desktop music IDE for Google Lyria Realtime with graph-based composition, vocals, timeline editing, and export."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lyria-studio-web.vercel.app/assets/app-canvas-overview.png"
     />
     <link rel="icon" href="./assets/lyria-icon.svg" type="image/svg+xml" />
     <link rel="icon" href="./assets/lyria-icon-256.png" sizes="256x256" type="image/png" />
@@ -18,6 +47,77 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lyria Studio",
+        "url": "https://lyria-studio-web.vercel.app/",
+        "logo": "https://lyria-studio-web.vercel.app/assets/lyria-icon-512.png",
+        "sameAs": ["https://github.com/AlanRoybal/lyria-studio"]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Lyria Studio",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": ["macOS", "Windows", "Linux"],
+        "softwareVersion": "0.1.1",
+        "description": "Lyria Studio is a desktop music IDE for Google Lyria Realtime with graph-based composition, vocals generation, timeline editing, automation, and export.",
+        "downloadUrl": [
+          "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.1/lyria-studio-mac-arm64.dmg",
+          "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.1/lyria-studio-mac-x64.dmg",
+          "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.1/lyria-studio-win-x64.exe",
+          "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.1/lyria-studio-linux-x86_64.AppImage",
+          "https://github.com/AlanRoybal/lyria-studio/releases/download/v0.1.1/lyria-studio-linux-amd64.deb"
+        ],
+        "featureList": [
+          "Node-based composition canvas",
+          "Realtime instrument streaming",
+          "Separate vocals generation path",
+          "Timeline editing and automation",
+          "Offline export"
+        ],
+        "creator": {
+          "@type": "Organization",
+          "name": "Lyria Studio"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Lyria Studio for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lyria Studio is a node-based desktop music IDE for directing AI-assisted composition, streaming instrumentals live, generating vocals clips, and arranging the results in a timeline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do vocals differ from instrument generation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Instrumental prompts can drive the realtime live session, while vocals use a dedicated clip-generation path and can be captured separately onto the timeline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What editing controls are already in the product?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The app already includes transport controls, BPM editing, split-at-playhead, track management, zoomable timeline navigation, waveform previews, and automation editing."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="page-shell">
@@ -71,51 +171,61 @@
             </p>
             <p class="hero-subtext">Mac • Windows • Linux</p>
             <div class="download-grid hero-downloads">
-              <a
-                class="download-card"
-                href="/dl/mac"
-                download="Lyria.Studio-0.1.0-mac-arm64.dmg"
-              >
-                <span class="download-icon" aria-hidden="true">
-                  <svg viewBox="0 0 384 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-                  </svg>
-                </span>
-                <span class="download-copy">
-                  <strong>Download for Mac</strong>
-                  <small>Apple Silicon DMG</small>
-                </span>
-              </a>
+              <details class="download-menu">
+                <summary class="download-card download-card-trigger">
+                  <span class="download-card-main">
+                    <span class="download-icon" aria-hidden="true">
+                      <svg viewBox="0 0 384 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                      </svg>
+                    </span>
+                    <span class="download-label">Download for Mac</span>
+                  </span>
+                  <span class="download-chevron" aria-hidden="true"></span>
+                </summary>
+                <div class="download-menu-panel">
+                  <a class="download-menu-option" href="/dl/mac-apple-silicon" download="lyria-studio-mac-arm64.dmg">
+                    <strong>Apple Silicon</strong>
+                  </a>
+                  <a class="download-menu-option" href="/dl/mac-intel" download="lyria-studio-mac-x64.dmg">
+                    <strong>Intel Chip</strong>
+                    <small>Older Macs (x64)</small>
+                  </a>
+                </div>
+              </details>
               <a
                 class="download-card"
                 href="/dl/windows"
-                download="Lyria.Studio-0.1.0-win-x64.exe"
+                download="lyria-studio-win-x64.exe"
               >
                 <span class="download-icon" aria-hidden="true">
                   <svg viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/>
                   </svg>
                 </span>
-                <span class="download-copy">
-                  <strong>Download for Windows</strong>
-                  <small>NSIS installer</small>
-                </span>
+                <span class="download-label">Download for Windows</span>
               </a>
-              <a
-                class="download-card"
-                href="/dl/linux"
-                download="Lyria.Studio-0.1.0-linux-x86_64.AppImage"
-              >
-                <span class="download-icon" aria-hidden="true">
-                  <svg viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7z"/>
-                  </svg>
-                </span>
-                <span class="download-copy">
-                  <strong>Download for Linux</strong>
-                  <small>AppImage</small>
-                </span>
-              </a>
+              <details class="download-menu download-menu-linux">
+                <summary class="download-card download-card-trigger">
+                  <span class="download-card-main">
+                    <span class="download-icon" aria-hidden="true">
+                      <img src="./assets/linux-tux.svg" alt="" />
+                    </span>
+                    <span class="download-label">Download for Linux</span>
+                  </span>
+                  <span class="download-chevron" aria-hidden="true"></span>
+                </summary>
+                <div class="download-menu-panel">
+                  <a class="download-menu-option" href="/dl/linux-appimage" download="lyria-studio-linux-x86_64.AppImage">
+                    <strong>AppImage</strong>
+                    <small>Portable build</small>
+                  </a>
+                  <a class="download-menu-option" href="/dl/linux-deb" download="lyria-studio-linux-amd64.deb">
+                    <strong>Debian / Ubuntu</strong>
+                    <small>.deb package</small>
+                  </a>
+                </div>
+              </details>
             </div>
             <div class="mac-fix">
               <p class="mac-fix-label">If macOS says "Lyria Studio" is damaged, run this command</p>
@@ -161,10 +271,10 @@
             </div>
             <div class="showcase-copy">
               <p class="card-kicker">Vocals Editor</p>
-              <h3>This is where you sketch the vocal idea without breaking your flow.</h3>
+              <h3>Shape The Vocal Direction In A Surface That Stays Effortless.</h3>
               <p>
-                You can drop in lyrics, add a few notes about tone or delivery, and keep moving. It feels more like
-                shaping a take in the middle of a session than filling out a form.
+                Write lyrics, guide the tone, and refine the mood in one quiet, focused place. It keeps the session
+                feeling fluid, so the idea stays in motion while the details come into focus.
               </p>
             </div>
           </article>
@@ -175,10 +285,10 @@
             </div>
             <div class="showcase-copy">
               <p class="card-kicker">Export Flow</p>
-              <h3>When the idea is ready, exporting is right there instead of hidden in another screen.</h3>
+              <h3>Export Lives Right Where The Session Already Feels Complete.</h3>
               <p>
-                You do not have to leave the session to finish the track. The export options sit next to the controls
-                you are already using, which makes the handoff from experimenting to rendering feel natural.
+                The handoff from live experimentation to final render feels immediate. Nothing pulls you out of the
+                moment when it is time to turn a sketch into something you can keep.
               </p>
             </div>
           </article>
@@ -189,10 +299,10 @@
             </div>
             <div class="showcase-copy">
               <p class="card-kicker">Timeline Automation</p>
-              <h3>You can make small arrangement moves directly on the clips and hear the difference fast.</h3>
+              <h3>Fine-Tune The Arrangement Exactly Where The Music Is Taking Shape.</h3>
               <p>
-                Volume and pitch changes are visible where the audio already lives, so the timeline feels like a real
-                arrangement surface instead of a place where generated parts go to wait.
+                Volume and pitch adjustments stay directly on the clips, which makes every move feel tactile, precise,
+                and easy to hear. The timeline becomes part of the performance, not just the place where it ends up.
               </p>
             </div>
           </article>
@@ -292,6 +402,18 @@
       </main>
     </div>
     <script>
+      const downloadMenus = document.querySelectorAll(".download-menu");
+      downloadMenus.forEach((menu) => {
+        menu.addEventListener("toggle", () => {
+          if (!menu.open) return;
+          downloadMenus.forEach((otherMenu) => {
+            if (otherMenu !== menu) {
+              otherMenu.open = false;
+            }
+          });
+        });
+      });
+
       const revealItems = document.querySelectorAll(".reveal-on-scroll");
       const revealObserver = new IntersectionObserver(
         (entries) => {

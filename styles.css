@@ -24,6 +24,11 @@
 
 html {
   scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at top left, rgba(130, 240, 141, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(180, 135, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, #05060a 0%, #080a10 48%, #05060a 100%);
+  overscroll-behavior: none;
 }
 
 body {
@@ -35,6 +40,7 @@ body {
     linear-gradient(180deg, #05060a 0%, #080a10 48%, #05060a 100%);
   color: var(--text);
   font-family: "Space Grotesk", sans-serif;
+  overscroll-behavior: none;
 }
 
 a {
@@ -510,14 +516,28 @@ h1 span {
 .download-grid {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+  align-items: start;
+}
+
+.download-menu {
+  position: relative;
+}
+
+.download-menu summary {
+  list-style: none;
+}
+
+.download-menu summary::-webkit-details-marker {
+  display: none;
 }
 
 .download-card {
   display: flex;
   align-items: center;
-  gap: 18px;
-  min-height: 82px;
-  padding: 18px 22px;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 80px;
+  padding: 20px 22px;
   color: #08110d;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 245, 244, 0.92));
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -531,9 +551,20 @@ h1 span {
   box-shadow: 0 22px 52px rgba(0, 0, 0, 0.28);
 }
 
+.download-card-trigger {
+  cursor: pointer;
+}
+
+.download-card-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
 .download-icon {
-  width: 42px;
-  height: 42px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -545,21 +576,89 @@ h1 span {
   height: 100%;
 }
 
-.download-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.download-copy strong {
-  font-size: 0.98rem;
-  line-height: 1.15;
+.download-label {
+  font-size: clamp(1.15rem, 2vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.04em;
 }
 
-.download-copy small {
-  color: rgba(8, 17, 13, 0.58);
-  font-size: 0.78rem;
+.download-chevron {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  border-right: 3px solid rgba(8, 17, 13, 0.56);
+  border-bottom: 3px solid rgba(8, 17, 13, 0.56);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 180ms ease;
+}
+
+.download-menu[open] .download-chevron {
+  transform: rotate(225deg) translateY(-1px);
+}
+
+.download-menu-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  right: 0;
+  z-index: 4;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(15, 15, 17, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.42);
+}
+
+.download-menu-option {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 34px;
+  color: rgba(255, 255, 255, 0.96);
+  transition: background 180ms ease;
+}
+
+.download-menu-option + .download-menu-option {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.download-menu-option:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.download-menu-option strong {
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.download-menu-option small {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 0.8rem;
+}
+
+.download-menu-linux .download-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.download-menu-linux .download-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero-downloads {
@@ -765,6 +864,10 @@ h1 span {
     padding: 10px 0;
   }
 
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+
   .showcase-copy {
     max-width: none;
   }
@@ -800,6 +903,11 @@ h1 span {
 
   .hero-shot {
     border-radius: 20px;
+  }
+
+  .download-menu-panel {
+    position: static;
+    margin-top: 10px;
   }
 
   .showcase {

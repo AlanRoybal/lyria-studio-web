@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lyria-studio-web.vercel.app/sitemap.xml
