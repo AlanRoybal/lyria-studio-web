@@ -87,7 +87,7 @@ select {
 
 .nav {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   gap: 16px;
   width: min(1100px, calc(100% - 32px));
@@ -105,6 +105,14 @@ select {
   align-items: center;
   gap: 12px;
   font-weight: 700;
+  justify-self: start;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .brand-mark {
@@ -159,11 +167,15 @@ select {
 }
 
 .nav-links {
+  width: 100%;
   justify-content: center;
+  justify-self: center;
 }
 
 .nav-actions {
+  width: 100%;
   justify-content: flex-end;
+  justify-self: end;
 }
 
 .nav-links a {
