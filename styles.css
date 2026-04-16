@@ -86,9 +86,9 @@ select {
 }
 
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
@@ -156,6 +156,14 @@ select {
 .nav-links,
 .nav-actions {
   gap: 12px;
+}
+
+.nav-links {
+  justify-content: center;
+}
+
+.nav-actions {
+  justify-content: flex-end;
 }
 
 .nav-links a {
@@ -228,6 +236,13 @@ select {
 
 .social-button-linkedin:hover {
   background: rgba(10, 102, 194, 0.24);
+}
+
+.social-button-icon-only {
+  justify-content: center;
+  width: 46px;
+  min-width: 46px;
+  padding: 0;
 }
 
 .hero {
@@ -874,6 +889,7 @@ h1 span {
   }
 
   .nav {
+    grid-template-columns: 1fr;
     flex-wrap: wrap;
   }
 
