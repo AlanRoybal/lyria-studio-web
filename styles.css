@@ -196,7 +196,7 @@ select {
   border-color: var(--border);
 }
 
-.github-button {
+.social-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -210,14 +210,24 @@ select {
   transition: background 180ms ease, transform 180ms ease;
 }
 
-.github-button:hover {
+.social-button:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-1px);
 }
 
-.github-button svg {
+.social-button svg {
   width: 18px;
   height: 18px;
+}
+
+.social-button-linkedin {
+  color: #dbeafe;
+  background: rgba(10, 102, 194, 0.16);
+  border-color: rgba(10, 102, 194, 0.28);
+}
+
+.social-button-linkedin:hover {
+  background: rgba(10, 102, 194, 0.24);
 }
 
 .hero {
@@ -915,7 +925,7 @@ h1 span {
     justify-content: center;
   }
 
-  .github-button {
+  .social-button {
     width: 100%;
     justify-content: center;
   }
